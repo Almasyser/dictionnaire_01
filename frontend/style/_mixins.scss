@@ -1,0 +1,9 @@
+@mixin texteformat($ff,$fs,$fw,$fy,$c,$pv,$ph,$mv,$mh){
+  font-family: $ff;
+  font-size: $fs;
+  font-weight: $fw;
+  font-style: $fy;
+  color: $c;
+  padding: $pv $ph;
+  margin: $mv $mh;
+}

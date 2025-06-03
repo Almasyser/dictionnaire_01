@@ -8,7 +8,7 @@ function FindWord(){
   const [chemin] = useState("http://localhost:5050/");
   const [actionList] = useState([
     {name:"wordByInitial", label:"Lettre initiale"},
-    {name:"wordByGroup", label:"Ailleurs dans le mot"},
+    {name:"wordByGroup", label:"Tout le mot"},
     {name:"wordByFinale", label:"Lettre finale"}
     ]);  
   const [action, setAction] = useState("wordByInitial"); 
@@ -17,7 +17,6 @@ function FindWord(){
       const response = await axios.post(`${chemin}${action}`, { caps: choice, len: len},
         {header:{"Content-Type": "application/json"}}
       );
-      console.log(response.data);
       setListeWords(response.data);
     }
     catch(err) {
@@ -26,46 +25,50 @@ function FindWord(){
   }
   const handleSubmit = (e)=>{
     e.preventDefault();
-    console.log("===>",choice," ",typeof(choice)," -- ",len," ",typeof(len));
-    
+    choice && len && handleInitial();
   }
   const handleAction = (e)=>{
     setAction(e.target.value);
-    console.log("change",e.target.value);
-    
+  }
+  const handleCancel = ()=>{
+    setChoice('a');
+    setLen(5);
+    setAction(actionList[1]);
   }
   return(
-    <>
-      <div>Find word</div>
-      {actionList.map((el)=>{
-        return(
-          <button 
-            key={el.name} 
-            type="radio" 
-            name="btnAction" 
-            value={el.name}
-            onClick={handleAction}
-            className={(action === el.name)? "btnRadio on":"btnRadio"}
-            >{el.label}</button>
-            
-        )
-      })}
-      <form>
-        <input type="text" value={choice} onChange={(e)=> setChoice(e.target.value)} />
-        <input type="number" value={len} onChange={(e)=> setLen(parseInt(e.target.value, 10))} />
-        <button onClick={handleSubmit}>submit</button>
-      </form>
-      <div>{choice}{len}</div>
-      <button type="button" onClick={handleInitial}>tester</button>
-      <div>{listWords.length}</div>
-      <ul>
+    <div className='dico-container'>
+      <section className='dico-box'>
+        <div className='sub-title'>Recherche le mot</div>
+        <div className='dico-actionlist'>
+          {actionList.map((el)=>{
+            return(
+              <button 
+                key={el.name} 
+                type="radio" 
+                name="btnAction" 
+                value={el.name}
+                onClick={handleAction}
+                className={(action === el.name)? "btnRadio on":"btnRadio"}
+              >{el.label}</button>
+            )
+          })}
+        </div>
+        <form className='dico-form'>
+          <input type="text" value={choice} onChange={(e)=> setChoice(e.target.value)} />
+          <input type="text" value={len} onChange={(e)=> setLen(parseInt(e.target.value, 10))} />
+          <button className="btn cancel" type="button" onClick={handleCancel}>↺</button>
+          <button className="btn submit" onClick={handleSubmit}>✓</button>
+        </form>
+      </section>
+      <div className='dico-list'>{listWords.length} mots trouvés.</div>
+      <ul className='list-box'>
         {listWords && listWords.map((el,index)=>{
           return(
-            <li key={index}>{el.word}</li>
+            <li className="list-line" key={index}>{el.word}</li>
           )
         })}
       </ul>
-    </>
+    </div>
   )
 }
 export default FindWord;

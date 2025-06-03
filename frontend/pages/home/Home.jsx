@@ -1,9 +1,9 @@
 import FindWord from "../../components/findWord/FindWord";
-
+import "./home.css";
 function Home(){
   return(
     <>
-      <div>Home</div>
+      <div className="title">Anti-sèche Scrabble</div>
       <FindWord />
     </>
   )

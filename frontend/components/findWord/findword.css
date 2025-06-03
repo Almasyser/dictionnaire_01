@@ -1,10 +1,121 @@
-li {
-  list-style: none;
+.dico-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #001219;
+}
+.dico-container .dico-box {
+  position: relative;
+}
+.dico-container .dico-box .sub-title {
+  font-family: cursive;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #ee9b00;
+  padding: 0 0;
+  margin: 0.5rem auto;
+}
+.dico-container .dico-box .dico-actionlist {
+  width: 40%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+.dico-container .dico-box .btnRadio {
+  width: 8rem;
+  height: 1.6rem;
+  background: #94d2bd;
+  color: #005f73;
+  border-radius: 0.5rem;
+  border: none;
+}
+.dico-container .dico-box .btnRadio.on {
+  color: #e9d8a6;
+  background: #005f73;
+  box-shadow: 2px 2px 8px #e9d8a6 inset;
+}
+.dico-container .dico-form {
+  width: 40%;
+  height: 3.2rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #0a9396;
+  border-radius: 0.5rem;
+}
+.dico-container .dico-form input {
+  width: 3rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  background: #005f73;
+  color: #e9d8a6;
+  border-radius: 0.5rem;
+}
+.dico-container .dico-form .btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+}
+.dico-container .dico-form .btn:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+.dico-container .dico-form .btn.cancel {
+  font-size: 2rem;
+  color: crimson;
+  padding-bottom: 0.5rem;
+}
+.dico-container .dico-form .btn.submit {
+  font-size: 1.5rem;
+  color: greenyellow;
 }
 
-.btnRadio {
-  background: rgb(97, 92, 245);
+.dico-list {
+  font-family: cursive;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #e9d8a6;
+  padding: 0 0;
+  margin: 0.5rem auto;
+  border-top: 1px solid #e9d8a6;
+  width: 90%;
+  max-height: 60vh;
+  padding-top: 1rem;
 }
-.btnRadio.on {
-  background: red;
+
+.list-box {
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  width: 90%;
+  height: 50%;
+  margin: 1rem auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #005f73;
+}
+
+.list-line {
+  width: 12rem;
+  height: 1.8rem;
+  border: none;
+  border-radius: 0.3rem;
+  list-style: none;
+  background-color: #e9d8a6;
+  font-family: Arial;
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: normal;
+  color: #001219;
+  padding: 0 0;
+  margin: 0 0;
 }/*# sourceMappingURL=findword.css.map */

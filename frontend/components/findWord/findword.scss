@@ -1,11 +1,105 @@
 @use "../../style/variables" as *;
-li{
-  list-style: none;
-}
-.btnRadio{
-  background: rgb(97, 92, 245);
-  &.on{
-    background: red;
+@use "../../style/mixins" as *;
+.dico-container{
+  width: 100%;
+  height: 100vh;
+  background-color: $bluedark;
+ 
+  .dico-box{
+    position: relative;
+    .sub-title{
+      @include texteformat(cursive,1.2rem,400,italic,$orangesoft,0,0,0.5rem, auto);
+    }
+    .dico-actionlist{
+      width: 40%;
+      margin: 1rem auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .btnRadio{
+      width: 8rem;
+      height: 1.6rem;
+      background: $blueclear;
+      color: $bluemedium;
+      border-radius: 0.5rem;
+      border: none;
+      &.on{
+        color: $clear;
+        background: $bluemedium;
+        box-shadow: 2px 2px 8px $clear inset;
+      }
+    }
+  }
+  .dico-form{
+    width: 40%;
+    height: 3.2rem;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $bluesoft;
+    border-radius: 0.5rem;
+    input{
+      width: 3rem;
+      height: 2rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      text-align: center;
+      background: $bluemedium;
+      color: $clear;
+      border-radius: 0.5rem;
+    }
+    .btn{
+      width: 2.4rem;
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+      &:hover{
+        scale: 1.2;
+        cursor: pointer;
+      }
+      &.cancel{
+        font-size: 2rem;
+        color: crimson;
+        padding-bottom: 0.5rem;
+      }
+      &.submit{
+        font-size: 1.5rem;
+        color: greenyellow;
+      }
+    }
   }
 
 }
+.dico-list{
+  @include texteformat(cursive,1.2rem,400,normal,$clear,0,0,0.5rem, auto);
+  border-top: 1px solid $clear;
+  width: 90%;
+  max-height: 60vh;
+  padding-top: 1rem;
+}
+.list-box{
+  overflow-y:scroll;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  width: 90%;
+  height: 50%;
+  margin: 1rem auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: $bluemedium;
+}
+.list-line{
+  width: 12rem;
+  height: 1.8rem;
+  border: none;
+  border-radius: 0.3rem;
+  list-style: none;
+  background-color: $clear;
+   @include texteformat(Arial,1rem,600,normal,$bluedark,0,0,0,0);
+}
+
