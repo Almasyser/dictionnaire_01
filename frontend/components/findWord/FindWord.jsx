@@ -55,7 +55,11 @@ function FindWord(){
         </div>
         <form className='dico-form'>
           <input type="text" value={choice} onChange={(e)=> setChoice(e.target.value)} />
-          <input type="text" value={len} onChange={(e)=> setLen(parseInt(e.target.value, 10))} />
+          <div className='len-box'>
+            <button className='btn-change' type="button" onClick={()=>setLen(len-1)}>-</button>
+            <input type="text" value={len} onChange={(e)=> setLen(parseInt(e.target.value, 10))} />
+            <button className='btn-change' type="button" onClick={()=>setLen(len+1)}>+</button>
+          </div>
           <button className="btn cancel" type="button" onClick={handleCancel}>↺</button>
           <button className="btn submit" onClick={handleSubmit}>✓</button>
         </form>

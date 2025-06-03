@@ -1,7 +1,7 @@
 @use "../../style/variables" as *;
 @use "../../style/_mixins" as *;
 .title{
-  @include texteformat(cursive,2rem,600,normal,$clear,1rem,1rem,1rem, auto);
+  @include texteformat(verdana,2rem,500,normal,$clear,1rem,1rem,1rem, auto);
 
 }
 

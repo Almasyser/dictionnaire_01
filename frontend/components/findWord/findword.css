@@ -7,11 +7,11 @@
   position: relative;
 }
 .dico-container .dico-box .sub-title {
-  font-family: cursive;
+  font-family: verdana;
   font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
-  color: #ee9b00;
+  color: #e9d8a6;
   padding: 0 0;
   margin: 0.5rem auto;
 }
@@ -54,6 +54,29 @@
   color: #e9d8a6;
   border-radius: 0.5rem;
 }
+.dico-container .dico-form .len-box {
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dico-container .dico-form .len-box .btn-change {
+  width: 1.4rem;
+  height: 2.4rem;
+  color: #e9d8a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0.2rem 0.2rem 0.2rem;
+}
+.dico-container .dico-form .len-box .btn-change:hover {
+  color: #ae2012;
+  cursor: pointer;
+}
 .dico-container .dico-form .btn {
   width: 2.4rem;
   height: 2.4rem;
@@ -95,6 +118,7 @@
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 0.6rem;
   width: 90%;
   height: 50%;

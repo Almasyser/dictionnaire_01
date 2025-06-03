@@ -8,7 +8,7 @@
   .dico-box{
     position: relative;
     .sub-title{
-      @include texteformat(cursive,1.2rem,400,italic,$orangesoft,0,0,0.5rem, auto);
+      @include texteformat(verdana,1.2rem,400,italic,$clear,0,0,0.5rem, auto);
     }
     .dico-actionlist{
       width: 40%;
@@ -49,6 +49,29 @@
       color: $clear;
       border-radius: 0.5rem;
     }
+    .len-box{
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .btn-change{
+        width: 1.4rem;
+        height: 2.4rem;
+        color: $clear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0.2rem 0.2rem 0.2rem;
+        &:hover{
+          color: $redmedium;
+          cursor: pointer;
+        }
+      }
+    }
     .btn{
       width: 2.4rem;
       height: 2.4rem;
@@ -70,6 +93,7 @@
         font-size: 1.5rem;
         color: greenyellow;
       }
+      
     }
   }
 
@@ -85,6 +109,7 @@
   overflow-y:scroll;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 0.6rem;
   width: 90%;
   height: 50%;
