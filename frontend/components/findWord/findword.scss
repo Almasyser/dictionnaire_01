@@ -1,0 +1,11 @@
+@use "../../style/variables" as *;
+li{
+  list-style: none;
+}
+.btnRadio{
+  background: rgb(97, 92, 245);
+  &.on{
+    background: red;
+  }
+
+}

@@ -1,0 +1,10 @@
+li {
+  list-style: none;
+}
+
+.btnRadio {
+  background: rgb(97, 92, 245);
+}
+.btnRadio.on {
+  background: red;
+}/*# sourceMappingURL=findword.css.map */
