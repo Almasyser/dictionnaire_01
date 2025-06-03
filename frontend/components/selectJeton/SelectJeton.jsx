@@ -1,16 +1,30 @@
-import fs from 'fs';
+// import img from "../../../public/Jetons/A.png"
+import { useState } from "react";
+import "./selectjeton.css";
 function SelectJeton(){
-  const readImageFile=(file)=> {
-    // read binary data from a file:
-    const bitmap = fs.readFileSync(file);
-    // const buf = new Buffer(bitmap);
-    return bitmap;
+  const [char, setChar] = useState('');
+  let i = 65;
+  const array =[];
+  do{
+    const lettre = ( String.fromCharCode(i));
+    array.push(lettre);
+    i++;
+    console.log(array);
   }
+  while(i<91);
+
   return(
-    <>
-    <div>select jeton</div>
-    {readImageFile(`E:/Developpement/React/Scrabble/dictionnaire_01/public/Jetons/A.png`) }
-    </>
+    <section className="jeton-container">
+      <h1>{char}</h1>
+      <div>select jeton</div>
+      <ul>
+        {array && array.map((el)=>{
+          return(
+            <li key={el}><img src={`../../../public/Jetons/${el}.png`} onClick={()=>setChar(el)}/></li>
+          )
+        })}
+      </ul>
+    </section>
   )
 }
 export default SelectJeton;

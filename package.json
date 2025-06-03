@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "fs": "^10.8.1",
     "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
