@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require('express');
 const router = express.Router();
 const { 
@@ -8,10 +9,14 @@ const {
   getWordByVisited, 
   addWord, 
   updateWord, 
-  deleteWord 
+  deleteWord,
 } = require('./controllers/wordControllers.js');
-
-// afficher 
+const {
+  getJetons,
+  addJeton,
+  deleteJeton
+} = require('./controllers/jetonControllers.js');
+// charger 
 router.get("/", getAllWords);
 //
 router.post("/wordByInitial", getWordByInitial);
@@ -27,5 +32,12 @@ router.post("/addWord", addWord);
 router.put("/updateWord/:idword", updateWord);
 // supprimer
 router.delete("/deleteWord/:idword", deleteWord);
+// JETON
+// charger
+router.get("/jeton", getJetons);
+// créer
+router.post("addJeton", addJeton);
+// supprimer
+router.delete("deleteJeton/:idjeton", deleteJeton);
 
 module.exports = router;
