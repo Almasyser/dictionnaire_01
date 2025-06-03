@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 require ('dotenv').config();
 
 const cors = require('cors');
@@ -12,14 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    // eslint-disable-next-line no-undef
     origin: process.env.REACT_APP_FRONTEND_URL,
     optionsSuccessStatus: 200,
   })
 );
-// eslint-disable-next-line no-undef
 console.log("Frontend origin",process.env.REACT_APP_FRONTEND_URL);
-
 // import and mount the API routes
 app.use(router);
 // ready to export
