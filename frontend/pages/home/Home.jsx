@@ -1,5 +1,6 @@
 // import FindWord from "../../components/findWord/FindWord";
 import SelectJeton from "../../components/selectJeton/SelectJeton";
+
 import "./home.css";
 function Home(){
   return(
