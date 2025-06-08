@@ -18,9 +18,8 @@ const getJetons = (req, res) => {
 };
 const addJeton = (req, res) => {
   const {jeton} = req.body;
-  if(!jeton){
-    return res.status(400).send("Mot requis");
-  }
+  console.log('Jeton:',jeton);
+  
   jetonManager
     .addJeton(jeton)
     .then(([rows]) => {

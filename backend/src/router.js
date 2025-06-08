@@ -36,8 +36,8 @@ router.delete("/deleteWord/:idword", deleteWord);
 // charger
 router.get("/jeton", getJetons);
 // créer
-router.post("addJeton", addJeton);
+router.post("/addJeton", addJeton);
 // supprimer
-router.delete("deleteJeton/:idjeton", deleteJeton);
+router.delete("/deleteJeton/:idjeton", deleteJeton);
 
 module.exports = router;
