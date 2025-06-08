@@ -19,11 +19,15 @@ function SelectJeton(){
   const handleclick =async (e)=>{
     e.preventDefault();
     // setChar(e);
-    if(!url) return;
-    await axios('http//:localhost:5050/addJeton',{
-      jeton: url,
-      header:{'Content-Type': 'application/json'},
-    })
+    if(!url) {
+      return console.log("echec");
+    }
+    try{
+      const response = await axios.post('http://localhost:5050/addJeton',{ jeton: url })
+      console.log("reussi",response);
+    } catch (error){
+      console.log("erreur ",error);
+    }
   }
  
   
