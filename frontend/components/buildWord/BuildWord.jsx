@@ -1,13 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from 'axios';
 import jetonVide from "../../../public/Jetons/0.png";
 import "./buildword.css";
 function BuildWord (){
   const [lineShow, setLineShow] = useState(false);
-  const [subMenu, setSubMenu] = useState(false);
-  const[nbrCap, setNbrCap] = useState(0);
+  const [subMenuShow, setSubMenuShow] = useState(false);
+  const [nbrCap, setNbrCap] = useState(0);
+  const [capsArray, setCapsArray] = useState([]);
   const lineArray = Array(nbrCap).fill(nbrCap);
-  console.log(lineArray);
+  // console.log(lineArray);
+  useEffect(()=>{
+     try{
+      const response= axios.get('http://localhost:5050/Jeton')
+      
+          setCapsArray(response)
+    } catch (error){
+      console.log("erreur ",error);
+    }
+    
+  },[]);
 
+  console.log(capsArray);
   
     return(
     <section className="build-container">
@@ -19,12 +32,12 @@ function BuildWord (){
         {lineArray && lineShow && lineArray.map((index)=>{
           return(
             <>
-              <img key={index} src={jetonVide} onClick={()=>setSubMenu(!subMenu)}/>
+              <img key={index} src={jetonVide} onClick={()=>setSubMenuShow(!subMenuShow)}/>
             </>
           )
         })}
       </div>
-      {subMenu && <div>submenu</div>}
+      {subMenuShow && <div>submenu</div>}
 
     </section>
   )

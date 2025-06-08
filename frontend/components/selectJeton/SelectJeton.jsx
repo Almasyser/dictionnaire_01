@@ -14,16 +14,17 @@ function SelectJeton(){
     array.push(lettre);
     i++;
   }
+  
   while(i<91);
   const handleClick=(char) => {
     url=`E:/Developpement/React/Scrabble/dictionnaire_01/public/Jetons/${char}.png`;
     console.log("URL", url);
-  }
     try{
       const response = axios.post('http://localhost:5050/addJeton',{ jeton: url })
       console.log("reussi",response);
-    } catch (error){
+      } catch (error){
       console.log("erreur ",error);
+    }
     }
   return(
     <section className="jeton-container">

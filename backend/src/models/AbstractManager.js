@@ -4,7 +4,7 @@ class AbstractManager{
     this.table = table;
   }
   findAll() {
-    return this.pool.query(`select * from  ${this.table} limit 20`);
+    return this.pool.query(`select * from  ${this.table}`);
   }
   find(id){
     console.log("ID passed to find method:", id); 
