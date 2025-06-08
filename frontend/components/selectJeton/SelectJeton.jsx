@@ -1,11 +1,11 @@
 // import img from "../../../public/Jetons/A.png"
-import { useState, useRef } from "react";
-import axios from 'axios';
+import {useRef} from "react";
+// import axios from 'axios';
 import "./selectjeton.css";
 
 function SelectJeton(){
   // const [char, setChar] = useState('*');
-  const [url]=useState('E:/Developpement/React/Scrabble/dictionnaire_01/public/Jetons/A.png');
+  let url ='';
   const ref = useRef(null);
   let i = 65;
   const array =[];
@@ -15,22 +15,16 @@ function SelectJeton(){
     i++;
   }
   while(i<91);
-  
-  const handleclick =async (e)=>{
-    e.preventDefault();
-    // setChar(e);
-    if(!url) {
-      return console.log("echec");
-    }
-    try{
-      const response = await axios.post('http://localhost:5050/addJeton',{ jeton: url })
-      console.log("reussi",response);
-    } catch (error){
-      console.log("erreur ",error);
-    }
+  const handleClick=(char) => {
+    url=`E:/Developpement/React/Scrabble/dictionnaire_01/public/Jetons/${char}.png`;
+    console.log("URL", url);
   }
- 
-  
+    // try{
+    //   const response = await axios.post('http://localhost:5050/addJeton',{ jeton: url })
+    //   console.log("reussi",response);
+    // } catch (error){
+    //   console.log("erreur ",error);
+    // }
   return(
     <section className="jeton-container">
       {/* <h1>{char}</h1> */}
@@ -38,7 +32,7 @@ function SelectJeton(){
       <ul>
         {array && array.map((el)=>{
           return(
-            <li key={el}><img src={`../../../public/Jetons/${el}.png`} onClick={handleclick} ref={ref}/></li>
+            <li key={el}><img src={`../../../public/Jetons/${el}.png`} onClick={()=>handleClick(el)} ref={ref}/></li>
           )
         })}
       </ul>
