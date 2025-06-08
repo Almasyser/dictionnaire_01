@@ -1,6 +1,6 @@
 // import img from "../../../public/Jetons/A.png"
 import {useRef} from "react";
-// import axios from 'axios';
+import axios from 'axios';
 import "./selectjeton.css";
 
 function SelectJeton(){
@@ -19,12 +19,12 @@ function SelectJeton(){
     url=`E:/Developpement/React/Scrabble/dictionnaire_01/public/Jetons/${char}.png`;
     console.log("URL", url);
   }
-    // try{
-    //   const response = await axios.post('http://localhost:5050/addJeton',{ jeton: url })
-    //   console.log("reussi",response);
-    // } catch (error){
-    //   console.log("erreur ",error);
-    // }
+    try{
+      const response = axios.post('http://localhost:5050/addJeton',{ jeton: url })
+      console.log("reussi",response);
+    } catch (error){
+      console.log("erreur ",error);
+    }
   return(
     <section className="jeton-container">
       {/* <h1>{char}</h1> */}
@@ -36,7 +36,6 @@ function SelectJeton(){
           )
         })}
       </ul>
-      
     </section>
   )
 }

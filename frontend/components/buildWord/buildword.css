@@ -1,0 +1,17 @@
+.build-container {
+  width: 100%;
+}
+
+.line-box {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+.line-box img {
+  cursor: pointer;
+}
+.line-box img:hover {
+  opacity: 0.9;
+  rotate: 5deg;
+  transition: 0.4s ease-in-out;
+}/*# sourceMappingURL=buildword.css.map */

@@ -1,0 +1,19 @@
+@use "../../style/variables" as *;
+@use "../../style/mixins" as *;
+.build-container{
+  width: 100%;
+
+}
+.line-box{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  img{
+    cursor: pointer;
+    &:hover{
+      opacity: 0.9;
+      rotate: 5deg;
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
