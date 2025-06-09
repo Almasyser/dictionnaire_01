@@ -10,17 +10,18 @@ function BuildWord (){
   const lineArray = Array(nbrCap).fill(nbrCap);
   // console.log(lineArray);
   useEffect(()=>{
-     try{
-      const response= axios.get('http://localhost:5050/Jeton')
-      
-          setCapsArray(response)
-    } catch (error){
-      console.log("erreur ",error);
-    }
-    
+    const fetchData = async () => {
+      try{
+        const response= await axios.get('http://localhost:5050/Jeton');
+        setCapsArray(response);
+     } catch (error){
+       console.log("erreur ",error);
+     }
+    };
+    fetchData();
   },[]);
 
-  console.log(capsArray);
+  console.log("### ",capsArray.data);
   
     return(
     <section className="build-container">
