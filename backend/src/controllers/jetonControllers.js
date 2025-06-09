@@ -18,8 +18,6 @@ const getJetons = (req, res) => {
 };
 const addJeton = (req, res) => {
   const {jeton} = req.body;
-  console.log('Jeton:',jeton);
-  
   jetonManager
     .addJeton(jeton)
     .then(([rows]) => {

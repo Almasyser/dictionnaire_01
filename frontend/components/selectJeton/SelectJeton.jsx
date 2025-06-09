@@ -1,37 +1,36 @@
-import {useRef} from "react";
-import axios from 'axios';
+// import axios from 'axios';
 import "./selectjeton.css";
+import jetons from "../../../public/Jetons";
+import { useEffect, useState } from "react";
 
 function SelectJeton(){
-  // const [char, setChar] = useState('*');
-  let url ='';
-  const ref = useRef(null);
-  let i = 65;
-  const array =[];
-  do{
-    const lettre = ( String.fromCharCode(i));
-    array.push(lettre);
-    i++;
-    }
-  while(i<91);
-  const handleClick=(char) => {
-    url=`E:/Developpement/React/Scrabble/dictionnaire_01/public/Jetons/${char}.png`;
-    console.log("URL", url);
-    try{
-      const response = axios.post('http://localhost:5050/addJeton',{ jeton: url })
-      console.log("reussi",response);
-      } catch (error){
-      console.log("erreur ",error);
-    }
-    }
+  const [myArray, setMyArray] = useState([jetons]);
+  
+useEffect(()=>{
+  const cles = Object.keys(jetons); 
+  setMyArray(cles)// Récupère toutes les clés du JSON
+
+},[]);
+    
+    
+    // try{
+      //   const response = axios.post('http://localhost:5050/addJeton',{ jeton: url })
+      //   console.log("reussi",response);
+      //   } catch (error){
+        //   console.log("erreur ",error);
+        // }
+  
+  console.log("###",myArray);
   return(
     <section className="jeton-container">
       {/* <h1>{char}</h1> */}
       <div>select jeton</div>
       <ul>
-        {array && array.map((el)=>{
+        {myArray && myArray.map((el)=>{
           return(
-            <li key={el}><img src={`../../../public/Jetons/${el}.png`} onClick={()=>handleClick(el)} ref={ref}/></li>
+            <li key={el}>
+              <img src={jetons[el]} alt={el} />
+            </li>
           )
         })}
       </ul>
