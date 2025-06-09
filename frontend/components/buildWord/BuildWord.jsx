@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import jetonVide from "../../../public/Jetons/0.png";
 import "./buildword.css";
+import jetons from "../../../public/Jetons";
 function BuildWord (){
   const [lineShow, setLineShow] = useState(false);
   const [subMenuShow, setSubMenuShow] = useState(false);
@@ -21,7 +22,7 @@ function BuildWord (){
     fetchData();
   },[]);
 
-  console.log("### ",capsArray.data[2].jetonimg);
+  // console.log("### ",capsArray.data[2].jetonimg);
   
     return(
     <section className="build-container">
@@ -29,6 +30,7 @@ function BuildWord (){
       <input type="number" onChange={(e)=>setNbrCap(parseInt(e.target.value, 10))} />
       <div>{nbrCap}</div>
       <button type="button" onClick={()=>setLineShow(!lineShow)}>Valide</button>
+      <img src={jetons.A} />
       <div className="line-box">
         {lineArray && lineShow && lineArray.map((el, index)=>{
           return(
