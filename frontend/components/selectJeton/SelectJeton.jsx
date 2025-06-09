@@ -1,4 +1,3 @@
-// import img from "../../../public/Jetons/A.png"
 import {useRef} from "react";
 import axios from 'axios';
 import "./selectjeton.css";
@@ -13,8 +12,7 @@ function SelectJeton(){
     const lettre = ( String.fromCharCode(i));
     array.push(lettre);
     i++;
-  }
-  
+    }
   while(i<91);
   const handleClick=(char) => {
     url=`E:/Developpement/React/Scrabble/dictionnaire_01/public/Jetons/${char}.png`;
