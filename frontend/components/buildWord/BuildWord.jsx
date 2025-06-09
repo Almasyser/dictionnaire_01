@@ -21,7 +21,7 @@ function BuildWord (){
     fetchData();
   },[]);
 
-  console.log("### ",capsArray.data);
+  console.log("### ",capsArray.data[2].jetonimg);
   
     return(
     <section className="build-container">
@@ -30,7 +30,7 @@ function BuildWord (){
       <div>{nbrCap}</div>
       <button type="button" onClick={()=>setLineShow(!lineShow)}>Valide</button>
       <div className="line-box">
-        {lineArray && lineShow && lineArray.map((index)=>{
+        {lineArray && lineShow && lineArray.map((el, index)=>{
           return(
             <>
               <img key={index} src={jetonVide} onClick={()=>setSubMenuShow(!subMenuShow)}/>
@@ -38,7 +38,14 @@ function BuildWord (){
           )
         })}
       </div>
-      {subMenuShow && <div>submenu</div>}
+      {subMenuShow && capsArray && capsArray.data.map((el)=>{
+        return(
+            <div key={el.idjeton}>
+              <div>{el.jetonimg}</div>
+              <img src={el.jetonimg} alt="###" />
+            </div>
+        )
+      })}
 
     </section>
   )
