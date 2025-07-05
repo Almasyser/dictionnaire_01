@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const AbstractManager = require('./AbstractManager');
 class WordManagers extends AbstractManager{
   constructor(){

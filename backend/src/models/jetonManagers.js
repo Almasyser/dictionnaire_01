@@ -6,7 +6,7 @@ class JetonManagers extends AbstractManager{
       table: "jeton",
     })
   }
-    addJeton(el) {
+  addJeton(el) {
     return this.pool.query(
       `INSERT INTO ${this.table} (jetonimg) VALUES (?)`,
       [el]
