@@ -2,34 +2,30 @@
 import "./selectjeton.css";
 import jetons from "../../../public/Jetons";
 import { useEffect, useState } from "react";
-
 function SelectJeton(){
   const [myArray, setMyArray] = useState([jetons]);
-  
-useEffect(()=>{
-  const cles = Object.keys(jetons); 
-  setMyArray(cles)// Récupère toutes les clés du JSON
+  const [choice, setChoice]= useState(null);
 
-},[]);
+  useEffect(()=>{
+    const cles = Object.keys(jetons);
+    setMyArray(cles);
+  },[]);
+
+  const handleClick=(el)=>{
+    setChoice(el);
+    console.log(el);
     
-    
-    // try{
-      //   const response = axios.post('http://localhost:5050/addJeton',{ jeton: url })
-      //   console.log("reussi",response);
-      //   } catch (error){
-        //   console.log("erreur ",error);
-        // }
-  
-  console.log("###",myArray);
+  }
   return(
     <section className="jeton-container">
-      {/* <h1>{char}</h1> */}
+      {choice && 
+      <img src={choice} />}
       <div>select jeton</div>
       <ul>
         {myArray && myArray.map((el)=>{
           return(
             <li key={el}>
-              <img src={jetons[el]} alt={el} />
+              <img src={jetons[el]} alt={el} onClick={()=>handleClick(jetons[el])}/>
             </li>
           )
         })}
