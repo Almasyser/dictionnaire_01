@@ -2,9 +2,9 @@
 import "./selectjeton.css";
 import jetons from "../../../public/Jetons";
 import { useEffect, useState } from "react";
-function SelectJeton(){
+function SelectJeton(props){
   const [myArray, setMyArray] = useState([jetons]);
-  const [choice, setChoice]= useState(null);
+  const {choice, setChoice} = props;
 
   useEffect(()=>{
     const cles = Object.keys(jetons);
@@ -13,8 +13,6 @@ function SelectJeton(){
 
   const handleClick=(el)=>{
     setChoice(el);
-    console.log(el);
-    
   }
   return(
     <section className="jeton-container">

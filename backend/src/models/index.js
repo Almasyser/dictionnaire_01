@@ -22,7 +22,7 @@ pool
     console.log("database connectée");
   })
   .catch ((error)=>{
-    console.warn("Warning:",error,"Failed to get a DB connection.");
+    console.warn("Alerte",error,"Impossible de connecter la base de donnees.");
 });
 const models = {};
 const WordManagers = require('./worldManagers');

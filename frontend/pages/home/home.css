@@ -1,3 +1,10 @@
+.home {
+  width: 100%;
+  min-height: 48rem;
+  background-image: url("../../public/elements_design/Tapis_vert.png");
+  border: 5px solid green;
+}
+
 .title {
   font-family: verdana;
   font-size: 2rem;

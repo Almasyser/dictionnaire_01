@@ -62,7 +62,7 @@ const getWordByFinale = (req, res) => {
 const getWordByGroup = (req, res) => {
   const {caps, len} = req.body;
   if (!caps || !len || isNaN(len)) {
-    return res.status(400).send("group est requise");
+    return res.status(400).send("group est requis");
   }
   wordManager
     .findByGroup(caps,len)
