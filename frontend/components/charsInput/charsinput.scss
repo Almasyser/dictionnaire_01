@@ -1,0 +1,37 @@
+@use "../../style/variables" as *;
+@use "../../style/mixins" as *;
+.input-container{
+  width: 100%;
+  height: max-content;
+  margin-bottom: 2rem;
+  h4{
+    color: $clear;
+  }
+}
+.input-box{
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  .btn{
+    width: 2rem;
+    height: 2rem;
+    color: $clear;
+    font-size: 2rem;
+    line-height: 1rem;
+    background-color: transparent;
+    border: none;
+    &:hover{
+      background-color: $bluemedium;
+      cursor: pointer;
+    }
+  }
+  input{
+    all: unset;
+    width: 4rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    color: $clear;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+}

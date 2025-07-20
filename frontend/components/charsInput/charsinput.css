@@ -1,0 +1,38 @@
+.input-container {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  margin-bottom: 2rem;
+}
+.input-container h4 {
+  color: #e9d8a6;
+}
+
+.input-box {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+}
+.input-box .btn {
+  width: 2rem;
+  height: 2rem;
+  color: #e9d8a6;
+  font-size: 2rem;
+  line-height: 1rem;
+  background-color: transparent;
+  border: none;
+}
+.input-box .btn:hover {
+  background-color: #005f73;
+  cursor: pointer;
+}
+.input-box input {
+  all: unset;
+  width: 4rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  color: #e9d8a6;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}/*# sourceMappingURL=charsinput.css.map */
