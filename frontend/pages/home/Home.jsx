@@ -1,6 +1,7 @@
 // import FindWord from "../../components/findWord/FindWord";
 // import SelectJeton from "../../components/selectJeton/SelectJeton";
-import BuildWord from "../../components/buildWord/BuildWord";
+// import BuildWord from "../../components/buildWord/BuildWord";
+import MakeWord from "../../components/makeWord/MakeWord";
 import "./home.css";
 function Home(){
   return(
@@ -8,7 +9,8 @@ function Home(){
       <div className="title">Anti-sèche Scrabble</div>
       {/* <FindWord /> */}
       {/* <SelectJeton /> */}
-      <BuildWord />
+      {/* <BuildWord /> */}
+      <MakeWord />
     </section>
   )
 }

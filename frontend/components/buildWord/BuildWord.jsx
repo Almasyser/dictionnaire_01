@@ -8,6 +8,11 @@ function BuildWord (){
   const [nbrCap, setNbrCap] = useState(0);
   const [choice, setChoice]= useState(null);
   const lineArray = Array(nbrCap).fill(nbrCap);
+  console.log("###", choice);
+  const handleClick = (index)=>{
+    setSubMenuShow(!subMenuShow)
+    lineArray[index] = choice;
+  }
   return(
     <section className="build-container">
       <div>Buid Word</div>
@@ -17,7 +22,7 @@ function BuildWord (){
       <div className="line-box">
         {lineArray && lineShow && lineArray.map((el, index)=>{
           return(
-            <img key={index} src={jetonVide} onClick={()=>setSubMenuShow(!subMenuShow)}/>
+            <img key={index} src={el || jetonVide} onClick={()=>handleClick(el,index)}/>
           )
         })}
       </div>

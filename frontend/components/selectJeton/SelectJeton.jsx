@@ -1,41 +1,31 @@
 // import axios from 'axios';
 import "./selectjeton.css";
-import jetons from "../../../public/Jetons";
-import { useEffect, useState } from "react";
 function SelectJeton(props){
-  const [myArray, setMyArray] = useState([jetons]);
-  const {choice, setChoice} = props;
-
-  useEffect(()=>{
-    const cles = Object.keys(jetons);
-    setMyArray(cles);
-  },[]);
-
-  const handleClick=(el)=>{
-    setChoice(el);
+  const {selected, setSelected, myArray, jetons} = props;
+  const handleClick = (el)=>{
+    setSelected(jetons[myArray[el]]);
   }
   return(
-    <section className="jeton-container">
-      {choice && 
-      <img src={choice} />}
-      <div>select jeton</div>
+   <section className="line-container">
+      <h3>make word</h3>
+      <div className="line">
+        <img src={selected} alt="@@@" />
+      </div>
       <ul>
-        {myArray && myArray.map((el)=>{
-          return(
-            <li key={el}>
-              <img src={jetons[el]} alt={el} onClick={()=>handleClick(jetons[el])}/>
-            </li>
-          )
-        })}
+        {
+         myArray &&myArray.map((el, index) => {
+            return(
+              <li key={index}>
+                <img src={jetons[el]} alt="###" onClick={()=>handleClick(index)}/>
+              </li>
+            )
+          })
+        }
       </ul>
+
     </section>
   )
 }
 export default SelectJeton;
 
 
-// CREATE TABLE `dictionnaire_csv`.`jeton` (
-//   `idjeton` INT NOT NULL AUTO_INCREMENT,
-//   `jetonimg` BLOB NULL,
-//   PRIMARY KEY (`idjeton`));
-// E:\Developpement\React\Scrabble\dictionnaire_01\public\Jetons
