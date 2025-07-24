@@ -9,28 +9,38 @@ function MakeWord() {
   const [selected, setSelected] = useState(jetons[0]);
   const [menuVisible, setMenuVisible] = useState(false);
   const [lineArray, setLineArray] = useState([]);
+  const [idx, setIdx] = useState(0);
   useEffect(()=>{
     const cles = Object.keys(jetons);
     setMyArray(cles);
   },[]);
-
-console.log("### ",lineArray);
-
-  
+  const handleClick=(idx)=>{
+    setSelected(0);
+    setIdx(idx);
+    setMenuVisible(true);
+  }
+  useEffect(()=>{
+    updateValue(idx, selected);
+    // setSelected(null)
+  },[selected, idx]);
+  const updateValue=(index,newValue)=>{
+    console.log("update");
+      setLineArray(prev =>
+          prev.map((item,i)=> i === index ? newValue: item)
+        );
+      };
   return(
     <div>
       <CharsInput lineArray={lineArray} setLineArray={setLineArray} />
-      <button type='button' onClick={()=>setMenuVisible(!menuVisible)}>afficher</button>
       <div className="menu-box">
-      {lineArray && lineArray.map((el,index)=>{
+      {lineArray && lineArray.map((el,idx)=>{
         return(
-          <img key={index} className="jeton" src={jetons[myArray[el]]} alt="||||"/>
+          <img key={idx} className="jeton" src={jetons[myArray[el]]} alt="||||" onClick={()=> handleClick(idx)}/>
         )
       })}
       </div>
       {menuVisible &&       
       <SelectJeton 
-        selected={selected} 
         setSelected={setSelected}
         myArray={myArray} 
         jetons={jetons} 
