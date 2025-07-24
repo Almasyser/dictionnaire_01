@@ -6,20 +6,6 @@ class WordManagers extends AbstractManager{
       table: "words",
     })
   }
-  findByInitial(initial,len){
-    return this.pool.query(
-      `SELECT word, length(word) FROM ${this.table} WHERE word LIKE ? AND length(word) = ?`,
-      [`${initial}%`, len]
-    );
-  }
-
-  findByFinale(finale,len){
-    return this.pool.query(
-      `SELECT word, length(word) FROM ${this.table} WHERE word LIKE ? AND length(word) = ?`,
-      [`%${finale}`, len]
-    );
-  }
-
   findByGroup(group,len){
     return this.pool.query(
       `SELECT word, length(word) FROM ${this.table} WHERE word LIKE ? AND length(word) = ?`,

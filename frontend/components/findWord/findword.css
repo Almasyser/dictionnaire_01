@@ -1,12 +1,10 @@
 .dico-container {
   width: 100%;
   height: 100vh;
-  background-color: #001219;
+  background-color: "../../public/elements_design/Tapis_vert.png";
 }
-.dico-container .dico-box {
+.dico-container .dico-title {
   position: relative;
-}
-.dico-container .dico-box .sub-title {
   font-family: verdana;
   font-size: 1.2rem;
   font-weight: 400;
@@ -15,13 +13,7 @@
   padding: 0 0;
   margin: 0.5rem auto;
 }
-.dico-container .dico-box .dico-actionlist {
-  width: 40%;
-  margin: 1rem auto;
-  display: flex;
-  justify-content: space-between;
-}
-.dico-container .dico-box .btnRadio {
+.dico-container .btnRadio {
   width: 8rem;
   height: 1.6rem;
   background: #94d2bd;
@@ -29,89 +21,10 @@
   border-radius: 0.5rem;
   border: none;
 }
-.dico-container .dico-box .btnRadio.on {
+.dico-container .btnRadio.on {
   color: #e9d8a6;
   background: #005f73;
   box-shadow: 2px 2px 8px #e9d8a6 inset;
-}
-.dico-container .dico-form {
-  width: 40%;
-  height: 3.2rem;
-  margin: 1rem auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #0a9396;
-  border-radius: 0.5rem;
-}
-.dico-container .dico-form input {
-  width: 3rem;
-  height: 2rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-  text-align: center;
-  background: #005f73;
-  color: #e9d8a6;
-  border-radius: 0.5rem;
-}
-.dico-container .dico-form .len-box {
-  height: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.dico-container .dico-form .len-box .btn-change {
-  width: 1.4rem;
-  height: 2.4rem;
-  color: #e9d8a6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: transparent;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0 0.2rem 0.2rem 0.2rem;
-}
-.dico-container .dico-form .len-box .btn-change:hover {
-  color: #ae2012;
-  cursor: pointer;
-}
-.dico-container .dico-form .btn {
-  width: 2.4rem;
-  height: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: transparent;
-}
-.dico-container .dico-form .btn:hover {
-  scale: 1.2;
-  cursor: pointer;
-}
-.dico-container .dico-form .btn.cancel {
-  font-size: 2rem;
-  color: crimson;
-  padding-bottom: 0.5rem;
-}
-.dico-container .dico-form .btn.submit {
-  font-size: 1.5rem;
-  color: greenyellow;
-}
-
-.dico-list {
-  font-family: cursive;
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-style: normal;
-  color: #e9d8a6;
-  padding: 0 0;
-  margin: 0.5rem auto;
-  border-top: 1px solid #e9d8a6;
-  width: 90%;
-  max-height: 60vh;
-  padding-top: 1rem;
 }
 
 .list-box {
@@ -122,10 +35,10 @@
   gap: 0.6rem;
   width: 90%;
   height: 50%;
-  margin: 1rem auto;
-  padding-top: 1rem;
+  margin: 0 auto;
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
-  background-color: #005f73;
+  background-color: transparent;
 }
 
 .list-line {

@@ -7,9 +7,6 @@ function SelectJeton(props){
   }
   return(
    <section className="line-container">
-      
-      <div className="line">
-      </div>
       <button className="btn-close" onClick={()=> setMenuVisible(false)}>Masquer le clavier</button>
       <ul>
         {

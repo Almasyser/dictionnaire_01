@@ -3,9 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { 
   getAllWords, 
-  getWordByInitial, 
   getWordByGroup, 
-  getWordByFinale, 
   getWordByVisited, 
   addWord, 
   updateWord, 
@@ -18,12 +16,8 @@ const {
 } = require('./controllers/jetonControllers.js');
 // charger 
 router.get("/", getAllWords);
-//
-router.post("/wordByInitial", getWordByInitial);
 // 
 router.post("/wordByGroup", getWordByGroup);
-//
-router.post("/wordByFinale",getWordByFinale);
 // 
 router.get("/wordByVisited", getWordByVisited);
 // créer

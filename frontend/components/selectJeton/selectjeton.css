@@ -28,11 +28,6 @@
   cursor: pointer;
 }
 
-.line img {
-  width: 48px;
-  height: 48px;
-}
-
 .btn-close {
   width: 8rem;
   height: 1.6rem;

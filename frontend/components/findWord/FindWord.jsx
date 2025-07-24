@@ -1,70 +1,41 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./findword.css";
-function FindWord(){
+import { data } from 'react-router-dom';
+function FindWord({array, myArray}){
+  const [modelFind, setModelFind] = useState([]);
   const [listWords, setListeWords] = useState([]);
-  const [choice, setChoice] = useState('a');
-  const [len, setLen] = useState('7');
+  const [len] = useState(array.length);
   const [chemin] = useState("http://localhost:5050/");
-  const [actionList] = useState([
-    {name:"wordByInitial", label:"Lettre initiale"},
-    {name:"wordByGroup", label:"Tout le mot"},
-    {name:"wordByFinale", label:"Lettre finale"}
-    ]);  
-  const [action, setAction] = useState("wordByInitial"); 
+  useEffect(()=>{
+      setModelFind([]);
+      array.map((el)=> {
+        setModelFind((prev)=>
+          [...prev,(el===0? '_':myArray[el])]
+        )
+      });
+      handleInitial();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[myArray, array])
+  const temp = modelFind.join('');
+  const regexFind=`${temp}`;
   const handleInitial = async ()=>{
     try {
-      const response = await axios.post(`${chemin}${action}`, { caps: choice, len: len},
+      const response = await axios.post(`${chemin}wordByGroup`, { caps: regexFind, len: len},
         {header:{"Content-Type": "application/json"}}
       );
       setListeWords(response.data);
+      console.log("data ",data);
+      
     }
     catch(err) {
     console.error(err);
     };
   }
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    choice && len && handleInitial();
-  }
-  const handleAction = (e)=>{
-    setAction(e.target.value);
-  }
-  const handleCancel = ()=>{
-    setChoice('a');
-    setLen(5);
-    setAction(actionList[1]);
-  }
+
   return(
     <div className='dico-container'>
-      <section className='dico-box'>
-        <div className='sub-title'>Recherche le mot</div>
-        <div className='dico-actionlist'>
-          {actionList.map((el)=>{
-            return(
-              <button 
-                key={el.name} 
-                type="radio" 
-                name="btnAction" 
-                value={el.name}
-                onClick={handleAction}
-                className={(action === el.name)? "btnRadio on":"btnRadio"}
-              >{el.label}</button>
-            )
-          })}
-        </div>
-        <form className='dico-form'>
-          <input type="text" value={choice} onChange={(e)=> setChoice(e.target.value)} />
-          <div className='len-box'>
-            <button className='btn-change' type="button" onClick={()=>setLen(len-1)}>-</button>
-            <input type="text" value={len} onChange={(e)=> setLen(parseInt(e.target.value, 10))} />
-            <button className='btn-change' type="button" onClick={()=>setLen(len+1)}>+</button>
-          </div>
-          <button className="btn cancel" type="button" onClick={handleCancel}>↺</button>
-          <button className="btn submit" onClick={handleSubmit}>✓</button>
-        </form>
-      </section>
-      <div className='dico-list'>{listWords.length} mots trouvés.</div>
+      <div className='dico-title'>{listWords.length} mots trouvés.</div>
       <ul className='list-box'>
         {listWords && listWords.map((el,index)=>{
           return(

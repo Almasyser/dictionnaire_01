@@ -3,18 +3,10 @@
 .dico-container{
   width: 100%;
   height: 100vh;
-  background-color: $bluedark;
- 
-  .dico-box{
+  background-color: $fond;
+  .dico-title{
     position: relative;
-    .sub-title{
-      @include texteformat(verdana,1.2rem,400,italic,$clear,0,0,0.5rem, auto);
-    }
-    .dico-actionlist{
-      width: 40%;
-      margin: 1rem auto;
-      display: flex;
-      justify-content: space-between;
+    @include texteformat(verdana,1.2rem,400,italic,$clear,0,0,0.5rem, auto);
     }
     .btnRadio{
       width: 8rem;
@@ -30,81 +22,7 @@
       }
     }
   }
-  .dico-form{
-    width: 40%;
-    height: 3.2rem;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: $bluesoft;
-    border-radius: 0.5rem;
-    input{
-      width: 3rem;
-      height: 2rem;
-      font-size: 1.2rem;
-      font-weight: 400;
-      text-align: center;
-      background: $bluemedium;
-      color: $clear;
-      border-radius: 0.5rem;
-    }
-    .len-box{
-      height: 2.4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .btn-change{
-        width: 1.4rem;
-        height: 2.4rem;
-        color: $clear;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        background: transparent;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin: 0 0.2rem 0.2rem 0.2rem;
-        &:hover{
-          color: $redmedium;
-          cursor: pointer;
-        }
-      }
-    }
-    .btn{
-      width: 2.4rem;
-      height: 2.4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      background: transparent;
-      &:hover{
-        scale: 1.2;
-        cursor: pointer;
-      }
-      &.cancel{
-        font-size: 2rem;
-        color: crimson;
-        padding-bottom: 0.5rem;
-      }
-      &.submit{
-        font-size: 1.5rem;
-        color: greenyellow;
-      }
-      
-    }
-  }
 
-}
-.dico-list{
-  @include texteformat(cursive,1.2rem,400,normal,$clear,0,0,0.5rem, auto);
-  border-top: 1px solid $clear;
-  width: 90%;
-  max-height: 60vh;
-  padding-top: 1rem;
-}
 .list-box{
   overflow-y:scroll;
   display: flex;
@@ -113,10 +31,10 @@
   gap: 0.6rem;
   width: 90%;
   height: 50%;
-  margin: 1rem auto;
-  padding-top: 1rem;
+  margin: 0 auto;
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
-  background-color: $bluemedium;
+  background-color: transparent;
 }
 .list-line{
   width: 12rem;

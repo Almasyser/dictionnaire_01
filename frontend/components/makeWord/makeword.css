@@ -1,28 +1,43 @@
-div {
+.menu-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
-div .menu-box {
+.menu-wrapper .menu-box {
   width: 80%;
   height: -moz-max-content;
   height: max-content;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
 }
-div .menu-box .jeton {
+.menu-wrapper .menu-box .jeton {
   width: 48px;
   height: 48px;
   border: 2px solid transparent;
   border-radius: 8px;
 }
-div .menu-box .jeton:hover {
+.menu-wrapper .menu-box .jeton:hover {
   border: 2px solid #0a9396;
   cursor: pointer;
 }
-div .menu-box .active {
+.menu-wrapper .menu-box .active {
   border: 2px solid #94d2bd;
+}
+
+.btn-find {
+  width: 10rem;
+  margin-left: 1rem;
+  border: none;
+  background-color: transparent;
+  color: #e9d8a6;
+  font-size: 1.2rem;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.btn-find:hover {
+  transform: translateX(5px);
 }/*# sourceMappingURL=makeword.css.map */

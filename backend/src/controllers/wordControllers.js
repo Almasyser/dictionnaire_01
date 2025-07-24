@@ -17,47 +17,7 @@ const getAllWords = (req, res) => {
       res.sendStatus(500);
     });
 };
-// world by initial
-const getWordByInitial = (req, res) => {
-  const {caps, len} = req.body;
-  if (!caps || !len || isNaN(len)) {
-    return res.status(400).send("initial est requise");
-  }
-  wordManager
-    .findByInitial(caps,len)
-    .then(([result]) => {
-      if (result.length) {
-        res.status(200).json(result);
-      } else {
-        res.sendStatus(404);
-      }
-    })
-    .catch((err) => {
-      console.error(err.message);
-      res.sendStatus(500);
-    });
-};
-// world by finale
-const getWordByFinale = (req, res) => {
-  const {caps, len} = req.body;
-  
-  if (!caps || !len || isNaN(len)) {
-    return res.status(400).send("finale est requise");
-  }
-  wordManager
-    .findByFinale(caps,len)
-    .then(([result]) => {
-      if (result.length) {
-        res.status(200).json(result);
-      } else {
-        res.sendStatus(404);
-      }
-    })
-    .catch((err) => {
-      console.error(err.message);
-      res.sendStatus(500);
-    });
-};
+
 // word by group
 const getWordByGroup = (req, res) => {
   const {caps, len} = req.body;
@@ -65,8 +25,8 @@ const getWordByGroup = (req, res) => {
     return res.status(400).send("group est requis");
   }
   wordManager
-    .findByGroup(caps,len)
-    .then(([result]) => {
+  .findByGroup(caps,len)
+  .then(([result]) => {
       if (result.length) {
         res.status(200).json(result);
       } else {

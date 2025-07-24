@@ -16,9 +16,9 @@ function CharInput(props){
     <div className="input-container">
       <h4>word in line</h4>
       <div className="input-box">
-      <button className="btn" onClick={()=>setNbrChars((nbrChars<1)? 0 :nbrChars-1)}>&lsaquo;</button>
-      <input type='text' onChange={handleChange} value={nbrChars}></input>
-      <button className="btn" onClick={()=>setNbrChars((nbrChars>=15)? 15 : nbrChars+1)}>&rsaquo;</button>
+        <button className="btn" onClick={()=>setNbrChars((nbrChars<1)? 0 :nbrChars-1)}>&lsaquo;</button>
+        <input type='text' onChange={handleChange} value={nbrChars}></input>
+        <button className="btn" onClick={()=>setNbrChars((nbrChars>=15)? 15 : nbrChars+1)}>&rsaquo;</button>
       </div>
     </div>
   )

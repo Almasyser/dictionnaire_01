@@ -13,6 +13,7 @@
   width: max-content;
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
 }
 .input-box .btn {
   width: 2rem;
