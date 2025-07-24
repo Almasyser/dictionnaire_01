@@ -1,12 +1,16 @@
 .line-container {
-  width: 100%;
+  position: relative;
+  width: 90%;
   height: -moz-max-content;
   height: max-content;
+  margin: 1rem auto;
 }
 .line-container ul {
-  width: 60%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0;
 }
 .line-container li {
   width: 52px;
@@ -27,4 +31,17 @@
 .line img {
   width: 48px;
   height: 48px;
+}
+
+.btn-close {
+  width: 8rem;
+  height: 1.6rem;
+  text-align: center;
+  color: #e9d8a6;
+  background-color: transparent;
+  border-radius: 6px;
+  border: none;
+}
+.btn-close:hover {
+  background-color: rgba(0, 160, 0, 0.5);
 }/*# sourceMappingURL=selectjeton.css.map */

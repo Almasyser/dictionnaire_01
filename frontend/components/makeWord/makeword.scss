@@ -1,24 +1,30 @@
+@use "../../style/variables" as *;
+
 div{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-}
-button{
-  width: 4rem;
-  height: 2rem;
-  background-color: dodgerblue;
-  border-radius: 0.2rem;
-}
-.menu-box{
-  width: 80%;
-  height: max-content;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  .jeton{
-    width: 48px;
-    height: 48px;
+  
+  .menu-box{
+    width: 80%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .jeton{
+      width: 48px;
+      height: 48px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      &:hover{
+        border: 2px solid $bluesoft;
+        cursor: pointer;
+      }
+    }
+    .active{
+      border: 2px solid $blueclear;
+    }
   }
 }

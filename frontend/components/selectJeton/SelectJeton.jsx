@@ -1,15 +1,16 @@
 // import axios from 'axios';
 import "./selectjeton.css";
 function SelectJeton(props){
-  const {setSelected, myArray, jetons} = props;
+  const {setSelected, myArray, jetons, setMenuVisible} = props;
   const handleClick = (el)=>{
     setSelected(el);
   }
   return(
    <section className="line-container">
-      <h3>make word</h3>
+      
       <div className="line">
       </div>
+      <button className="btn-close" onClick={()=> setMenuVisible(false)}>Masquer le clavier</button>
       <ul>
         {
          myArray &&myArray.map((el, index) => {

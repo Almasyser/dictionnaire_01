@@ -1,13 +1,18 @@
 @use "../../style/variables" as *;
 @use "../../style/mixins" as *;
 .line-container{
-  width: 100%;
+  
+  position: relative;
+  width: 90%;
   height: max-content;
+  margin: 1rem auto;
 
   ul{
-    width: 60%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
   }
   li{
     width: 52px;
@@ -30,4 +35,18 @@
     width: 48px;
     height: 48px;
   }
+}
+.btn-close{
+  width: 8rem;
+  height: 1.6rem;
+  text-align: center;
+  color: $clear;
+  background-color: transparent;
+  border-radius: 6px;
+  border: none;
+  &:hover{
+    background-color: rgba(0,160,0,0.5);
+  }
+  
+
 }
