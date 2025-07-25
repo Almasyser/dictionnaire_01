@@ -24,11 +24,13 @@ function MakeWord() {
   }
   // lance la recherche
  const handleFind=()=>{
-  let dot=lineArray.reduce((acc, el)=>{
+   let dot=(lineArray.reduce((acc, el)=>{
       return acc= acc + el;
-    })
-  dot !== 0? setFindVisible(true):setFindVisible(false);
+    }))
+    dot !== 0? setFindVisible(true):setFindVisible(false);
  }
+
+
   return(
     <div className="menu-wrapper">
       <CharsInput lineArray={lineArray} setLineArray={setLineArray} setFindVisible={setFindVisible}/>
