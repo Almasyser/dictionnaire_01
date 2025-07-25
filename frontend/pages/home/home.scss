@@ -7,7 +7,12 @@
   border: 5px solid green;
 }
 .title{
-  @include texteformat(verdana,2rem,500,normal,$clear,1rem,1rem,1rem, auto);
+  @include texteformat(verdana,1.6rem,500,normal,$clear,1rem,1rem,0.5rem, auto);
 
 }
+.subtitle{
+  @include texteformat(verdana,0.8rem,400,normal,$blueclear,0,0,0, auto);
+
+}
+
 

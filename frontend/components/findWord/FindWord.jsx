@@ -10,10 +10,8 @@ function FindWord({lineArray, myArray}){
   if(lineArray){
     modelFind = lineArray.map((el)=> (el===0 ? '_':myArray[el]))
   }
-  console.log("model",modelFind);
   const temp = modelFind.join('');
   const regx=`${temp}`;
-  console.log("REGX",regx);
   if(regx){
     handleFetch(regx);
     }

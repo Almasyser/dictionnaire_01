@@ -6,9 +6,9 @@
 .dico-container .dico-title {
   position: relative;
   font-family: verdana;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   color: #e9d8a6;
   padding: 0 0;
   margin: 0.5rem auto;
@@ -28,13 +28,14 @@
 }
 
 .list-box {
-  overflow-y: scroll;
+  overflow-y: auto;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 0.6rem;
-  width: 90%;
-  height: 50%;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: 50%;
   margin: 0 auto;
   padding-top: 0.5rem;
   padding-bottom: 1rem;

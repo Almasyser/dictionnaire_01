@@ -6,7 +6,7 @@
   background-color: $fond;
   .dico-title{
     position: relative;
-    @include texteformat(verdana,1.2rem,400,italic,$clear,0,0,0.5rem, auto);
+    @include texteformat(verdana,1rem,400,normal,$clear,0,0,0.5rem, auto);
     }
     .btnRadio{
       width: 8rem;
@@ -24,13 +24,13 @@
   }
 
 .list-box{
-  overflow-y:scroll;
+  overflow-y:auto;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 0.6rem;
-  width: 90%;
-  height: 50%;
+  height: max-content;
+  max-height: 50%;
   margin: 0 auto;
   padding-top: 0.5rem;
   padding-bottom: 1rem;

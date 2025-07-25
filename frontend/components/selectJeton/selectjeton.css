@@ -1,6 +1,7 @@
 .line-container {
   position: relative;
   width: 90%;
+  max-width: 652px;
   height: -moz-max-content;
   height: max-content;
   margin: 1rem auto;

@@ -7,10 +7,20 @@
 
 .title {
   font-family: verdana;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   font-style: normal;
   color: #e9d8a6;
   padding: 1rem 1rem;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
+}
+
+.subtitle {
+  font-family: verdana;
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #94d2bd;
+  padding: 0 0;
+  margin: 0 auto;
 }/*# sourceMappingURL=home.css.map */

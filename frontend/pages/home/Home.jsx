@@ -7,6 +7,7 @@ function Home(){
   return(
     <section className="home">
       <div className="title">Anti-sèche Scrabble</div>
+      <div className="subtitle">Le dictionnaire du scrabble</div>
       {/* <FindWord /> */}
       {/* <SelectJeton /> */}
       {/* <BuildWord /> */}
