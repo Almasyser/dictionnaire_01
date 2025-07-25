@@ -111,8 +111,6 @@ const addWord = (req, res) => {
 };
 module.exports = {
   getAllWords,
-  getWordByInitial,
-  getWordByFinale,
   getWordByGroup,
   getWordByVisited,
   updateWord,

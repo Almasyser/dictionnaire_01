@@ -1,38 +1,33 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import "./findword.css";
-import { data } from 'react-router-dom';
-function FindWord({array, myArray}){
-  const [modelFind, setModelFind] = useState([]);
+function FindWord({lineArray, myArray}){
+  console.log("useeffect");
   const [listWords, setListeWords] = useState([]);
-  const [len] = useState(array.length);
-  const [chemin] = useState("http://localhost:5050/");
-  useEffect(()=>{
-      setModelFind([]);
-      array.map((el)=> {
-        setModelFind((prev)=>
-          [...prev,(el===0? '_':myArray[el])]
-        )
-      });
-      handleInitial();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[myArray, array])
+  const len = lineArray.length;
+  const chemin = "http://localhost:5050/";
+  let modelFind;
+  if(lineArray){
+    modelFind = lineArray.map((el)=> (el===0 ? '_':myArray[el]))
+  }
+  console.log("model",modelFind);
   const temp = modelFind.join('');
-  const regexFind=`${temp}`;
-  const handleInitial = async ()=>{
+  const regx=`${temp}`;
+  console.log("REGX",regx);
+  if(regx){
+    handleFetch(regx);
+    }
+  async function handleFetch(regx) {
     try {
-      const response = await axios.post(`${chemin}wordByGroup`, { caps: regexFind, len: len},
-        {header:{"Content-Type": "application/json"}}
-      );
-      setListeWords(response.data);
-      console.log("data ",data);
-      
+    const response = await axios.post(`${chemin}wordByGroup`, { caps: regx, len: len},
+      {header:{"Content-Type": "application/json"}}
+    );
+    setListeWords(response.data);
     }
     catch(err) {
     console.error(err);
-    };
-  }
-
+      };
+    }
   return(
     <div className='dico-container'>
       <div className='dico-title'>{listWords.length} mots trouvés.</div>

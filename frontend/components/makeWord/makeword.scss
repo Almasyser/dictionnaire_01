@@ -30,15 +30,14 @@
   }
 }
 .btn-find{
-  width: 10rem;
-  margin-left: 1rem;
+  width: 48px;
+  height: 48px;
+  margin-left: 0.2rem;
   border: none;
   background-color: transparent;
-  color: $clear;
-  font-size: 1.2rem;
-  border-radius: 16px;
   cursor: pointer;
   &:hover{
-    transform: translateX(5px);
+    transition-duration: 0.5s;
+    transform: translateX(20px);
   }
 }
