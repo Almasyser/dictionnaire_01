@@ -23,14 +23,13 @@ function MakeWord() {
     setMenuVisible(true);
   }
   // lance la recherche
- const handleFind=()=>{
-   let dot=(lineArray.reduce((acc, el)=>{
-      return acc= acc + el;
+  const handleFind=()=>{
+    let dot=(lineArray.reduce((acc, el)=>{
+     return acc= acc + el;
     }))
     dot !== 0? setFindVisible(true):setFindVisible(false);
+    console.log("dot",lineArray,dot);
  }
-
-
   return(
     <div className="menu-wrapper">
       <CharsInput lineArray={lineArray} setLineArray={setLineArray} setFindVisible={setFindVisible}/>
@@ -53,7 +52,7 @@ function MakeWord() {
           jetons={jetons} 
           setMenuVisible={setMenuVisible}/>}
       </div>
-      {findVisible && <FindWord lineArray={lineArray} myArray={myArray}/>}
+      {findVisible && <FindWord lineArray={lineArray} myArray={myArray} />}
     </div>
   )  
 }
