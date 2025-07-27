@@ -28,9 +28,6 @@ const models = {};
 const WordManagers = require('./worldManagers');
 models.words = new WordManagers();
 models.words.setDatabase(pool);
-const JetonManagers = require('./jetonManagers');
-models.jeton = new JetonManagers();
-models.jeton.setDatabase(pool);
 
 const handler = {
   get(obj, prop) {
