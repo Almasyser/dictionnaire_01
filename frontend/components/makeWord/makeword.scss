@@ -14,20 +14,34 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    .jeton{
-      width: 48px;
-      height: 48px;
-      border: 2px solid transparent;
-      border-radius: 8px;
-      &:hover{
-        border: 2px solid $bluesoft;
-        cursor: pointer;
-      }
-    }
-    .active{
-      border: 2px solid $blueclear;
-    }
   }
+}
+.jetongame{
+  width: 48px;
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  &:hover{
+    border: 2px solid $orangesoft;
+    cursor: pointer;
+  }
+}
+.activegame{
+  border: 2px solid $clear;
+}
+
+.jeton{
+  width: 48px;
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  &:hover{
+    border: 2px solid $bluesoft;
+    cursor: pointer;
+  }
+}
+.active{
+  border: 2px solid $blueclear;
 }
 .btn-find{
   width: 48px;
@@ -39,5 +53,18 @@
   &:hover{
     transition-duration: 0.5s;
     transform: translateX(20px);
+  }
+}
+.btn-mygame{
+  width: 8rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding-bottom: 0.4rem;
+  color: $clear;
+  &:hover{
+    background-color: rgba(0, 160,0, 0.4);
+    cursor: pointer;
   }
 }

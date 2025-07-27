@@ -14,17 +14,34 @@
   flex-wrap: nowrap;
   justify-content: center;
 }
-.menu-wrapper .menu-box .jeton {
+
+.jetongame {
   width: 48px;
   height: 48px;
   border: 2px solid transparent;
   border-radius: 8px;
 }
-.menu-wrapper .menu-box .jeton:hover {
+.jetongame:hover {
+  border: 2px solid #ee9b00;
+  cursor: pointer;
+}
+
+.activegame {
+  border: 2px solid #e9d8a6;
+}
+
+.jeton {
+  width: 48px;
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+.jeton:hover {
   border: 2px solid #0a9396;
   cursor: pointer;
 }
-.menu-wrapper .menu-box .active {
+
+.active {
   border: 2px solid #94d2bd;
 }
 
@@ -39,4 +56,18 @@
 .btn-find:hover {
   transition-duration: 0.5s;
   transform: translateX(20px);
+}
+
+.btn-mygame {
+  width: 8rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding-bottom: 0.4rem;
+  color: #e9d8a6;
+}
+.btn-mygame:hover {
+  background-color: rgba(0, 160, 0, 0.4);
+  cursor: pointer;
 }/*# sourceMappingURL=makeword.css.map */
