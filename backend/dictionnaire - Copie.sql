@@ -15,7 +15,7 @@ CREATE TABLE `words` (
   `word` varchar(32) DEFAULT NULL,
    PRIMARY KEY (`idword`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\liste_francais.txt'
+LOAD DATA INFILE '/var/lib/mysql-files/liste_francais.txt'
  INTO TABLE words
  LINES TERMINATED BY '\r\n'
 (word);

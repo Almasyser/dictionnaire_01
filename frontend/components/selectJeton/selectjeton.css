@@ -6,14 +6,15 @@
   height: max-content;
   margin: 1rem auto;
 }
-.line-container ul {
-  width: 90%;
+.line-container .line-ul {
+  width: 560px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0;
+  margin: 0 auto;
+  padding: 0;
 }
-.line-container li {
+.line-container .line-li {
   width: 52px;
   height: 52px;
   list-style: none;

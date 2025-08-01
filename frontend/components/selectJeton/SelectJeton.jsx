@@ -10,11 +10,11 @@ function SelectJeton(props){
   return(
    <section className="line-container">
       <button className="btn-close" onClick={()=> setVisible(false)}>Masquer le clavier</button>
-      <ul>
+      <ul className="line-ul">
         {
          myArray && myArray.map((el, index) => {
             return(
-              <li key={index} >
+              <li key={index} className="line-li">
                 <img src={jetons[el]} alt="###" onClick={()=>handleClick(index)} />
               </li>
             )

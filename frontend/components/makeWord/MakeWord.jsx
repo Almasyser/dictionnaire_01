@@ -76,7 +76,7 @@ function MakeWord() {
       })}
       {lineArray.length>1 && <img className="btn-find" src={OKImg} alt="OK" onClick={handleFind}/>}
       </div>
-      <div>
+
         {menuVisible &&       
         <SelectJeton 
           updateArray={setLineArray}
@@ -84,7 +84,7 @@ function MakeWord() {
           myArray={myArray} 
           jetons={jetons} 
           setVisible={setMenuVisible}/>}
-      </div>
+ 
       {findVisible && <FindWord lineArray={lineArray} myArray={myArray} />}
     </div>
     </>
